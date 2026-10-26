@@ -1,0 +1,138 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Agricultural themed design system */
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 120 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 15% 15%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 28 40% 65%;
+    --secondary-foreground: 30 15% 25%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 120 10% 40%;
+
+    --accent: 200 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 142 20% 85%;
+    --input: 142 20% 88%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 142 60% 15%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 50% 20%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 142 40% 25%;
+    --sidebar-ring: 200 85% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(28 40% 65%), hsl(28 40% 55%));
+    --shadow-soft: 0 4px 12px hsl(142 71% 45% / 0.15);
+  }
+
+  .dark {
+    --background: 120 15% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 120 15% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 120 15% 12%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 28 30% 35%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 120 15% 18%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 200 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 15% 20%;
+    --input: 120 15% 20%;
+    --ring: 142 71% 45%;
+
+    --sidebar-background: 142 60% 10%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 50% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 142 40% 20%;
+    --sidebar-ring: 200 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Urdu font styling */
+  html[lang="ur"] body {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-weight: 500;
+    line-height: 1.8;
+  }
+
+  html[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  html[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
